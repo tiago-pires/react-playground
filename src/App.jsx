@@ -1,16 +1,33 @@
-import { useState } from 'react'
-import './App.css'
+import { useState } from "react";
+import tree from "./data/tree.js";
 
 function App() {
-  const [count, setCount] = useState(0)
-
-  return (
-    <div className="App">
-      <header className="App-header">
-         Hello
-      </header>
-    </div>
-  )
+   return (
+      <div className="App">
+         <ul>
+            {tree.map((item) => (
+               <Item key={item.id} item={item} />
+            ))}
+         </ul>
+      </div>
+   );
 }
 
-export default App
+function Item(props) {
+   const [isOpen, setIsOpen] = useState(false);
+   const {item} = props
+   return (
+      <li>
+         {item.label}
+         {item.children && (
+            <ul>
+               {item.children.map((child) => {
+                  return <Item key={child.id} item={child} />;
+               })}
+            </ul>
+         )}
+      </li>
+   );
+}
+
+export default App;
