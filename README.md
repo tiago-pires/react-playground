@@ -1,6 +1,5 @@
 # Recursive Tree
 
-- Managing self State
-- Notifying parent and child
-- Styling nested calls
-
+-  [] Managing recursion state
+-  [] Notifying parent and child
+-  [] Styling nested calls
