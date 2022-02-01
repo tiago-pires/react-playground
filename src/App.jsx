@@ -1,4 +1,3 @@
-import { useState } from "react";
 import tree from "./data.js";
 
 function App() {
@@ -14,15 +13,11 @@ function App() {
 }
 
 function Item({item}) {
-   const [isOpen, setIsOpen] = useState(false);
    const {label, children} = item
    return (
       <li>
-         {children && (
-            <button onClick={() => setIsOpen( isOpen => !isOpen )}> + </button>
-         )}
          {label}
-         {children && isOpen && (
+         {Array.isArray(children) && (
             <ul>
                {children.map((child) => {
                   return <Item key={child.id} item={child} />;
