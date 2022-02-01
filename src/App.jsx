@@ -1,5 +1,5 @@
 import { useState } from "react";
-import tree from "./data/tree.js";
+import tree from "./data.js";
 
 function App() {
    return (
@@ -17,11 +17,11 @@ function Item({item}) {
    const [isOpen, setIsOpen] = useState(false);
    const {label, children} = item
    return (
-      <li >
-         {label}
+      <li>
          {children && (
             <button onClick={() => setIsOpen( isOpen => !isOpen )}> + </button>
          )}
+         {label}
          {children && isOpen && (
             <ul>
                {children.map((child) => {

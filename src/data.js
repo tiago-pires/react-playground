@@ -1,4 +1,4 @@
-const treeData = [
+const data = [
    {
       label: "France",
       id: "1a5d",
@@ -33,4 +33,4 @@ const treeData = [
    },
 ];
 
-export default treeData;
+export default data;
