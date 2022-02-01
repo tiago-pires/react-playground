@@ -13,18 +13,18 @@ function App() {
    );
 }
 
-function Item(props) {
+function Item({item}) {
    const [isOpen, setIsOpen] = useState(false);
-   const {item} = props
+   const {label, children} = item
    return (
       <li >
-         {item.label}
-         {item.children && (
+         {label}
+         {children && (
             <button onClick={() => setIsOpen( isOpen => !isOpen )}> + </button>
          )}
-         {item.children && isOpen && (
+         {children && isOpen && (
             <ul>
-               {item.children.map((child) => {
+               {children.map((child) => {
                   return <Item key={child.id} item={child} />;
                })}
             </ul>

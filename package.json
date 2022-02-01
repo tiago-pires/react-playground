@@ -1,17 +1,20 @@
 {
-  "name": "react-concepts",
-  "version": "0.0.0",
-  "scripts": {
-    "dev": "vite",
-    "build": "vite build",
-    "serve": "vite preview"
-  },
-  "dependencies": {
-    "react": "^17.0.0",
-    "react-dom": "^17.0.0"
-  },
-  "devDependencies": {
-    "@vitejs/plugin-react": "^1.0.0",
-    "vite": "^2.6.4"
-  }
+   "name": "react-concepts",
+   "version": "0.0.0",
+   "scripts": {
+      "start": "npm run dev -- --port 1111",
+      "dev": "vite",
+      "build": "vite build",
+      "serve": "vite preview"
+   },
+   "dependencies": {
+      "@heroicons/react": "^1.0.5",
+      "react": "^17.0.0",
+      "react-dom": "^17.0.0",
+      "react-router-dom": "^6.2.1"
+   },
+   "devDependencies": {
+      "@vitejs/plugin-react": "^1.0.0",
+      "vite": "^2.6.4"
+   }
 }
