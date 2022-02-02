@@ -18,7 +18,7 @@ function Item({item}) {
    const {label, children} = item
    return (
       <li>
-         {children && (
+         {Array.isArray(children) && (
             <button onClick={() => setIsOpen( isOpen => !isOpen )}> + </button>
          )}
          {label}
