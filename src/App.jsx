@@ -1,4 +1,5 @@
 import tree from "./data.js";
+import { useState } from "react";
 
 function App() {
    return (
@@ -12,20 +13,24 @@ function App() {
    );
 }
 
-function Item({item}) {
-   const {label, children} = item
-   return (
-      <li>
-         {label}
-         {Array.isArray(children) && (
-            <ul>
+function Item({ item }) {
+   const [isOpen, setIsOpen] = useState(false);
+   const { label, children, id } = item;
+   if (Array.isArray(children)) {
+      return (
+         <li>
+            <button onClick={() => setIsOpen((isOpen) => !isOpen)}>+</button>
+            {label}
+            <ul style={{display: isOpen ? 'block' : 'none'}}>
                {children.map((child) => {
                   return <Item key={child.id} item={child} />;
                })}
             </ul>
-         )}
-      </li>
-   );
+         </li>
+      );
+   } else {
+      return <li> {label} </li>;
+   }
 }
 
 export default App;
